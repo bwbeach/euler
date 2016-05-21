@@ -23,6 +23,7 @@ func getAnswer(problemNumber int) int {
 	switch problemNumber {
 	case 1: return integer.SumMultiples([]int {3, 5}, 1000)
 	case 2: return problem2()
+	case 3: return integer.LargestPrimeFactor(600851475143)
 	default: return -1
 	}
 }
