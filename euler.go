@@ -19,11 +19,25 @@ func problem2() int {
 	return result
 }
 
+func problem4() int {
+	result := 1
+	for a := 100; a < 1000; a++ {
+		for b := a; b < 1000; b++ {
+			product := a * b
+			if integer.IsPalindrome(product) && result < product {
+				result = product
+			}
+		}
+	}
+	return result
+}
+
 func getAnswer(problemNumber int) int {
 	switch problemNumber {
 	case 1: return integer.SumMultiples([]int {3, 5}, 1000)
 	case 2: return problem2()
 	case 3: return integer.LargestPrimeFactor(600851475143)
+	case 4: return problem4()
 	default: return -1
 	}
 }
