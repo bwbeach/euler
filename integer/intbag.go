@@ -2,7 +2,9 @@ package integer
 
 import "sort"
 
-// IntBag is a bag of integers
+// IntBag is a bag of integers, represented as a map from
+// an int value to the number of times the value occurs in
+// the bag.
 type IntBag map[int]int
 
 // Creates a new, empty bag
