@@ -12,7 +12,7 @@ func problem2() int {
 	fib := integer.FibonacciGenerator()
 	result := 0
 	for n := fib(); n < 4000000; n = fib() {
-		if n % 2 == 0 {
+		if n%2 == 0 {
 			result += n
 		}
 	}
@@ -42,17 +42,23 @@ func problem5() int {
 	for _, f := range factors.ToSlice() {
 		result = result * f
 	}
-	return result;
+	return result
 }
 
 func getAnswer(problemNumber int) int {
 	switch problemNumber {
-	case 1: return integer.SumMultiples([]int {3, 5}, 1000)
-	case 2: return problem2()
-	case 3: return integer.LargestPrimeFactor(600851475143)
-	case 4: return problem4()
-	case 5: return problem5()
-	default: return -1
+	case 1:
+		return integer.SumMultiples([]int{3, 5}, 1000)
+	case 2:
+		return problem2()
+	case 3:
+		return integer.LargestPrimeFactor(600851475143)
+	case 4:
+		return problem4()
+	case 5:
+		return problem5()
+	default:
+		return -1
 	}
 }
 
