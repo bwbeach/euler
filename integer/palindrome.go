@@ -9,7 +9,7 @@ func IsPalindrome(n int) bool {
 	end := len(s)
 	half := (len(s) + 1) / 2
 	for i := 0; i <= half; i++ {
-		if s[i] != s[end - i - 1] {
+		if s[i] != s[end-i-1] {
 			return false
 		}
 	}

@@ -4,7 +4,7 @@ package integer
 // factors
 func isMultipleOfAny(n int, factors []int) bool {
 	for _, f := range factors {
-		if n % f == 0 {
+		if n%f == 0 {
 			return true
 		}
 	}
@@ -17,7 +17,7 @@ func SumMultiples(factors []int, max int) int {
 	result := 0
 	for i := 1; i < max; i++ {
 		if isMultipleOfAny(i, factors) {
-			result += i;
+			result += i
 		}
 	}
 	return result

@@ -11,17 +11,17 @@ func generatePrimes(c chan int) {
 	// One to prime the pump
 	c <- 3
 	found = append(found, 3)
-	
+
 	// Generate forever, adding primes to 'found' as
 	// they are found.
 	for n := 5; true; n += 2 {
 		for _, p := range found {
-			if n < p * p {
+			if n < p*p {
 				c <- n
 				found = append(found, n)
 				break
 			}
-			if n % p == 0 {
+			if n%p == 0 {
 				break
 			}
 		}
@@ -41,7 +41,7 @@ func LargestPrimeFactor(n int) int {
 	primes := PrimeChannel()
 	for 1 < n {
 		p := <-primes
-		for n % p == 0 {
+		for n%p == 0 {
 			result = p
 			n = n / p
 		}
