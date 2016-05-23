@@ -53,7 +53,7 @@ func max(a int, b int) int {
 // Returns the "union" of two bags, where the number of times each
 // number occurs is the maximum of the how many times it occurs in each
 // input bag.
-func union(a *IntBag, b *IntBag) *IntBag {
+func Union(a *IntBag, b *IntBag) *IntBag {
 	result := map[int]int{}
 	for k, v := range *(a.asMap()) {
 		result[k] = v

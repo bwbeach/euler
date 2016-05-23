@@ -20,7 +20,7 @@ func TestUnion(t *testing.T) {
 	bag2.Add(3)
 	checkMap("[1 1 2 3]", bag2, "bag2", t)
 
-	bag3 := union(bag1, bag2)
+	bag3 := Union(bag1, bag2)
 	checkMap("[1 1 2 2 3]", bag3, "bag3", t)
 }
 

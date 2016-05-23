@@ -48,3 +48,17 @@ func LargestPrimeFactor(n int) int {
 	}
 	return result
 }
+
+// Returns the prime factors for n as a bag of ints
+func PrimeFactors(n int) *IntBag {
+	result := NewIntBag()
+	primes := PrimeChannel()
+	for 1 < n {
+		p := <-primes
+		for n%p == 0 {
+			result.Add(p)
+			n = n / p
+		}
+	}
+	return result
+}

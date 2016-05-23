@@ -1,6 +1,9 @@
 package integer
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestPrimeChannel(t *testing.T) {
 	c := PrimeChannel()
@@ -20,3 +23,18 @@ func TestLargestPrimeFactor(t *testing.T) {
 		t.Errorf("Expected %d but got %d", expected, actual)
 	}
 }
+
+func TestFactorNumber(t *testing.T) {
+	checkFactoring("[2]", 2, t)
+	checkFactoring("[2 2 3]", 12, t)
+	checkFactoring("[2 2 5 5]", 100, t)
+}
+
+func checkFactoring(expected string, n int, t *testing.T) {
+	factors := PrimeFactors(n)
+	actual := fmt.Sprintf("%v", factors.ToSlice())
+	if expected != actual {
+		t.Errorf("Expected %v but got %v for %v", expected, actual, n)
+	}
+}
+
